@@ -17,7 +17,7 @@
         stage('Docker Build') {
         agent any
         steps {
-            sh 'docker build -t TU_USUARIO_DOCKERHUB/spring-petclinic:gestion-udem-jenkins .'
+            sh 'docker build -t juan778/spring-petclinic:gestion-udem-jenkins .'
         }
         }
 
@@ -31,7 +31,7 @@
             )]) {
             sh '''
                 printf '%s' "$dockerHubPassword" | docker login --username "$dockerHubUser" --password-stdin
-                docker push TU_USUARIO_DOCKERHUB/spring-petclinic:gestion-udem-jenkins
+                docker push juan778/spring-petclinic:gestion-udem-jenkins
             '''
             }
         }
